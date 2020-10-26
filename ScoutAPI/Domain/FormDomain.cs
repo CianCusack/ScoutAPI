@@ -34,6 +34,10 @@ namespace ScoutAPI.Domain
                     FormId = formId,
                     CloseContact = inputForm.CloseContact,
                     SymptomsInd = inputForm.SymptomsInd,
+                    DiagnosedInd = inputForm.DiagnosedInd,
+                    SelfIsolatedInd = inputForm.SelfIsolatedInd,
+                    CocoonInd = inputForm.CocoonInd,
+                    AtRiskInd = inputForm.AtRiskInd,
                 }
             };
 

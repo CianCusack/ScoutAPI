@@ -19,6 +19,10 @@ namespace ScoutAPI.Repository
             builder.Property(x => x.FormId).HasColumnName("form_id").HasColumnType("nchar(10)").HasMaxLength(10).IsRequired();
             builder.Property(x => x.CloseContact).HasColumnName("close_contact_ind").HasColumnType("bit");
             builder.Property(x => x.SymptomsInd).HasColumnName("symptoms_ind").HasColumnType("bit");
+            builder.Property(x => x.DiagnosedInd).HasColumnName("diagnosed_ind").HasColumnType("bit");
+            builder.Property(x => x.SelfIsolatedInd).HasColumnName("self_isolate_ind").HasColumnType("bit");
+            builder.Property(x => x.CocoonInd).HasColumnName("cocoon_ind").HasColumnType("bit");
+            builder.Property(x => x.AtRiskInd).HasColumnName("at_risk_ind").HasColumnType("bit");
         }
     }
 }

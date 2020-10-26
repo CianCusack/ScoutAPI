@@ -16,5 +16,13 @@ namespace ScoutAPI.Domain
         public bool SymptomsInd { get; set; }
 
         public FormApi Form { get; set; }
+
+        public bool DiagnosedInd { get; set; }
+
+        public bool SelfIsolatedInd { get; set; }
+
+        public bool CocoonInd { get; set; }
+
+        public bool AtRiskInd { get; set; }
     }
 }

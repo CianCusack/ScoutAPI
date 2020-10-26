@@ -15,7 +15,7 @@ namespace ScoutAPI.Models
             _covidQuestions = covidQuestions;
         }
 
-        public bool CloseContact
+        public bool CloseContactIndicated
         {
             get
             {
@@ -31,6 +31,46 @@ namespace ScoutAPI.Models
             {
                 return _covidQuestions != null 
                     ? _covidQuestions.SymptomsInd
+                    : false;
+            }
+        }
+
+        public bool DiagnosedIndicated
+        {
+            get
+            {
+                return _covidQuestions != null
+                    ? _covidQuestions.DiagnosedInd
+                    : false;
+            }
+        }
+
+        public bool SelfIsolateIndicated
+        {
+            get
+            {
+                return _covidQuestions != null
+                    ? _covidQuestions.SelfIsolatedInd
+                    : false;
+            }
+        }
+
+        public bool CocoonIndicated
+        {
+            get
+            {
+                return _covidQuestions != null
+                    ? _covidQuestions.CocoonInd
+                    : false;
+            }
+        }
+
+        public bool AtRiskGroupIndicated
+        {
+            get
+            {
+                return _covidQuestions != null
+                    ? _covidQuestions.AtRiskInd
                     : false;
             }
         }

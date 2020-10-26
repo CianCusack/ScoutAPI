@@ -12,7 +12,10 @@ namespace ScoutAPI.Domain
         int FormId { get; set; }
         bool CloseContact { get; set; }
         bool SymptomsInd { get; set; }
-
         FormApi Form { get; set; }
+        bool DiagnosedInd { get; set; }
+        bool SelfIsolatedInd { get; set; }
+        bool CocoonInd { get; set; }
+        bool AtRiskInd { get; set; }
     }
 }

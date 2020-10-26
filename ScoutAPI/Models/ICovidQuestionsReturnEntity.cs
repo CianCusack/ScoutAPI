@@ -7,8 +7,16 @@ namespace ScoutAPI.Models
 {
     public interface ICovidQuestionsReturnEntity
     {
-        bool CloseContact { get; }
+        bool CloseContactIndicated { get; }
 
         bool SymptomsIndicated { get; }
+
+        bool DiagnosedIndicated { get; }
+
+        bool SelfIsolateIndicated { get; }
+
+        bool CocoonIndicated { get; }
+
+        bool AtRiskGroupIndicated { get; }
     }
 }

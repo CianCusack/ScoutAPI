@@ -7,8 +7,6 @@ namespace ScoutAPI.Models
 {
     public class InputForm
     {
-        public int FormId { get; set; }
-
         public string FirstName { get; set; }
 
         public string Surname { get; set; }
@@ -16,10 +14,17 @@ namespace ScoutAPI.Models
         public bool IsSigned { get; set; }
 
         public DateTime DateSigned { get; set; }
-        public int QuestionId { get; set; }
 
         public bool CloseContact { get; set; }
 
         public bool SymptomsInd { get; set; }
+
+        public bool DiagnosedInd { get; set; }
+
+        public bool SelfIsolatedInd { get; set; }
+
+        public bool CocoonInd { get; set; }
+
+        public bool AtRiskInd { get; set; }
     }
 }
