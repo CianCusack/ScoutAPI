@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ScoutAPI.Models
 {
-    public class FormReturnEntity : IFormReturnEntity
+    public class FormReturnEntity : IFormReturnEntity, IReturnEntity
     {
         private IFormApi _formApi;
 

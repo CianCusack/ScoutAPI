@@ -33,9 +33,11 @@ namespace ScoutAPI.Controllers
          
         // GET api/<Test>/5
         [HttpGet("{id}")]
-        public async Task<IFormReturnEntity> Get(int id)
+        public async Task<IReturnEntity> Get(int id)
         {
             IFormApi api = await _formDomain.GetFormById(id);
+            if (api is null)
+                return new RequestReturnEntity("No record for this ID.", 400);
             IFormReturnEntity returnEntity = new FormReturnEntity(api);
             return returnEntity;
         }
@@ -45,11 +47,11 @@ namespace ScoutAPI.Controllers
         public async Task<IRequestReturnEntity> Post([FromBody] InputForm inputForm)
         {
             if (!ModelState.IsValid)
-                return new RequestReturnEntity("Invalid Data" , 400);
+                return new RequestReturnEntity("Invalid Data." , 400);
 
             await _formDomain.AddFormRecord(inputForm);
 
-            return new RequestReturnEntity("Successfully created new form record", 200);
+            return new RequestReturnEntity("Successfully created new form record.", 200);
         }
 
         // PUT api/<Test>/5

@@ -28,7 +28,7 @@ namespace ScoutAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers().AddNewtonsoftJson();
+            services.AddControllersWithViews().AddNewtonsoftJson();
 
             services.AddTransient<IFormDomain, FormDomain>();
             services.AddTransient<IFormRepository, FormRepository>();
@@ -57,6 +57,7 @@ namespace ScoutAPI
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
                 endpoints.MapControllers();
             });
         }

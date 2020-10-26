@@ -5,10 +5,7 @@ using System.Threading.Tasks;
 
 namespace ScoutAPI.Models
 {
-    public interface IRequestReturnEntity : IReturnEntity
+    public interface IReturnEntity
     {
-        int Status { get; set; }
-
-        string Message { get; set; }
     }
 }
