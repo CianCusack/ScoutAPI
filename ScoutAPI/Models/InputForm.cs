@@ -26,5 +26,7 @@ namespace ScoutAPI.Models
         public bool CocoonInd { get; set; }
 
         public bool AtRiskInd { get; set; }
+
+        public string ScoutSection { get; set; }
     }
 }

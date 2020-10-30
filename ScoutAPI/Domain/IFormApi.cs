@@ -18,5 +18,7 @@ namespace ScoutAPI.Domain
         DateTime DateSigned { get; set; }
 
         CovidQuestionsApi CovidQuestionsApi { get; set; }
+
+        ScoutSection ScoutSection { get; set; }
     }
 }

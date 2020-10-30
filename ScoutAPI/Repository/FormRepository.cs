@@ -29,6 +29,7 @@ namespace ScoutAPI.Repository
             return await _formContext
                 .Forms
                 .Include(x => x.CovidQuestionsApi)
+                .Include(x => x.ScoutSection)
                 .ToListAsync();
         }
 

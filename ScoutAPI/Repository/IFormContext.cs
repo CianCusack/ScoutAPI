@@ -14,6 +14,8 @@ namespace ScoutAPI.Repository
 
         DbSet<CovidQuestionsApi> CovidQuestions { get; set; }
 
+        DbSet<ScoutSection> ScoutSections { get; set; }
+
         Task SaveChangesAsync();
     }
 }

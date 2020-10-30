@@ -48,6 +48,16 @@ namespace ScoutAPI.Models
             }
         }
 
+        public string ScoutSection
+        {
+            get
+            {
+                return _formApi.ScoutSection != null
+                    ? _formApi.ScoutSection.SectionDescription
+                    : string.Empty;
+            }
+        }
+
         public ICovidQuestionsReturnEntity CovidQuestions
         {
             get

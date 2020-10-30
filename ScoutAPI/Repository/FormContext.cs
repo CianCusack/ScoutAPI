@@ -19,6 +19,7 @@ namespace ScoutAPI.Repository
         {
             builder.ApplyConfiguration(new FormMap());
             builder.ApplyConfiguration(new CovidQuestionsMap());
+            builder.ApplyConfiguration(new ScoutSectionMap());
         }
 
         public async Task SaveChangesAsync()
@@ -29,5 +30,7 @@ namespace ScoutAPI.Repository
         public DbSet<FormApi> Forms { get; set; }
 
         public DbSet<CovidQuestionsApi> CovidQuestions { get; set; }
+
+        public DbSet<ScoutSection> ScoutSections { get; set; }
     }
 }

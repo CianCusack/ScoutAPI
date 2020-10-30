@@ -17,6 +17,8 @@ namespace ScoutAPI.Models
 
         string DateSigned { get; }
 
+        string ScoutSection { get; }
+
         ICovidQuestionsReturnEntity CovidQuestions { get; }
     }
 }

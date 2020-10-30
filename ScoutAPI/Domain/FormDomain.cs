@@ -38,7 +38,8 @@ namespace ScoutAPI.Domain
                     SelfIsolatedInd = inputForm.SelfIsolatedInd,
                     CocoonInd = inputForm.CocoonInd,
                     AtRiskInd = inputForm.AtRiskInd,
-                }
+                },
+                SectionCode = inputForm.ScoutSection,
             };
 
             await _formRepository.AddFormRecord(form);
