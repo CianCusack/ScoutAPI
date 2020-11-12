@@ -15,8 +15,8 @@ namespace ScoutAPI.Repository
             builder.ToTable("Covid_Questions", "dbo");
             builder.HasKey(x => x.QuestionId);
 
-            builder.Property(x => x.QuestionId).HasColumnName("question_id").HasColumnType("nchar(10)").HasMaxLength(10).IsRequired().ValueGeneratedOnAdd();
-            builder.Property(x => x.FormId).HasColumnName("form_id").HasColumnType("nchar(10)").HasMaxLength(10).IsRequired();
+            builder.Property(x => x.QuestionId).HasColumnName("question_id").HasColumnType("int").IsRequired().ValueGeneratedOnAdd();
+            builder.Property(x => x.FormId).HasColumnName("form_id").HasColumnType("int").IsRequired();
             builder.Property(x => x.CloseContact).HasColumnName("close_contact_ind").HasColumnType("bit");
             builder.Property(x => x.SymptomsInd).HasColumnName("symptoms_ind").HasColumnType("bit");
             builder.Property(x => x.DiagnosedInd).HasColumnName("diagnosed_ind").HasColumnType("bit");

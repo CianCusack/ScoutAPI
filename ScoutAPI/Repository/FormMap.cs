@@ -17,7 +17,7 @@ namespace ScoutAPI.Repository
             builder.ToTable("Forms", "dbo");
             builder.HasKey(x => x.FormId);
 
-            builder.Property(x => x.FormId).HasColumnName("id").HasColumnType("nchar(10)").IsRequired().ValueGeneratedOnAdd();
+            builder.Property(x => x.FormId).HasColumnName("id").HasColumnType("int").IsRequired().ValueGeneratedOnAdd();
             builder.Property(x => x.FirstName).HasColumnName("first_name").HasColumnType("varchar(30)").HasMaxLength(30);
             builder.Property(x => x.Surname).HasColumnName("surname").HasColumnType("varchar(30)").HasMaxLength(30);
             builder.Property(x => x.IsSigned).HasColumnName("is_signed").HasColumnType("bit").HasMaxLength(30);
