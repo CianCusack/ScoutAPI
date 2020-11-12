@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -40,6 +41,24 @@ namespace ScoutAPI.Controllers
                 return new RequestReturnEntity("No record for this ID.", 400);
             IFormReturnEntity returnEntity = new FormReturnEntity(api);
             return returnEntity;
+        }
+
+        // GET api/<Test>/5
+        [HttpGet("{fromDate}/{toDate}")]
+        public async Task<IEnumerable<IReturnEntity>> Get(string fromDate, string toDate)
+        {
+            var returnEntities = new List<IFormReturnEntity>();
+            IEnumerable<IFormApi> apis = await _formDomain.GetFormsWithDates(
+                DateTime.ParseExact(fromDate, "yyyyMMdd", CultureInfo.InvariantCulture),
+                DateTime.ParseExact(toDate, "yyyyMMdd", CultureInfo.InvariantCulture));
+
+            if (apis is null || !apis.Any())
+                return returnEntities;
+            
+            foreach(var api in apis)
+                returnEntities.Add(new FormReturnEntity(api));
+
+            return returnEntities;
         }
 
         // POST api/<Test>

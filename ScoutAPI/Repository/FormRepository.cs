@@ -38,7 +38,19 @@ namespace ScoutAPI.Repository
             return await _formContext
                 .Forms
                 .Include(x => x.CovidQuestionsApi)
+                .Include(x => x.ScoutSection)
                 .FirstOrDefaultAsync(x => x.FormId == id);
+        }
+
+        public async Task<IEnumerable<IFormApi>> GetFromForByDates(DateTime fromDate, DateTime toDate)
+        {
+            return await _formContext
+                .Forms
+                .Include(x => x.CovidQuestionsApi)
+                .Include(x => x.ScoutSection)
+                .Where(x => x.DateSigned < toDate.AddDays(1)
+                        && x.DateSigned >= fromDate)
+                .ToListAsync();
         }
 
         public async Task<int> GetNextFormId()

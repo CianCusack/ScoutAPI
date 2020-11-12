@@ -11,5 +11,6 @@ namespace ScoutAPI.Domain
         Task<IFormApi> GetFormById(int id);
         Task<IEnumerable<IFormReturnEntity>> GetAllForms();
         Task AddFormRecord(InputForm form);
+        Task<IEnumerable<IFormApi>> GetFormsWithDates(DateTime fromDate, DateTime toDate);
     }
 }

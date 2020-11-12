@@ -62,5 +62,10 @@ namespace ScoutAPI.Domain
         {
             return await _formRepository.GetFormById(id); 
         }
+
+        public async Task<IEnumerable<IFormApi>> GetFormsWithDates(DateTime fromDate, DateTime toDate)
+        {
+            return await _formRepository.GetFromForByDates(fromDate, toDate);
+        }
     }
 }

@@ -14,5 +14,6 @@ namespace ScoutAPI.Repository
         Task AddFormRecord(FormApi formApi);
         Task<int> GetNextFormId();
         Task<int> GetNextQuestionId();
+        Task<IEnumerable<IFormApi>> GetFromForByDates(DateTime fromDate, DateTime toDate);
     }
 }
